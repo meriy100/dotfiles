@@ -1,1 +1,18 @@
-ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
+#!/bin/sh
+
+ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
+ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
+
+mkdir -p $HOME/.config
+ln -sf $(pwd)/karabiner $HOME/.config/karabiner
+
+ln -sf $(pwd)/.zshrc $HOME/.zshrc
+ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
+
+ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
+
+ln -sf $(pwd)/Brewfile $HOME/Brewfile
+
+brew bundle
+
+
