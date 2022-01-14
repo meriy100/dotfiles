@@ -133,6 +133,9 @@ PROMPT="%{${fg[blue]}%}%B[%n@%m]%b%{${reset_color}%}%{${fg[green]}%}%~%{${reset_
 #SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 #RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 
+## homebrew path
+export PATH="$HOME/opt/homebrew/bin:$PATH"
+
 
 ##rbenv path
 export PATH="$HOME/.rbenv/bin:$PATH"
