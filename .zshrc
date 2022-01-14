@@ -134,7 +134,7 @@ PROMPT="%{${fg[blue]}%}%B[%n@%m]%b%{${reset_color}%}%{${fg[green]}%}%~%{${reset_
 #RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 
 ## homebrew path
-export PATH="$HOME/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 
 ##rbenv path
