@@ -2,4 +2,5 @@
 BetterTouchTool/**/*
 BetterTouchTool/bttdata2
 
+karabiner/automatic_backups
 nvim/dein
