@@ -2,7 +2,7 @@
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
-alias ls="ls -G"
+# alias ls="ls -G"
 alias gr="grep -rn --color=auto"
 alias bim='vim'
 alias bi='vim'
@@ -20,9 +20,9 @@ alias sourcedo='source ~/.zshrc'
 alias tmuxrw="tmux rename-window"
 alias tmuxrs="tmux rename-session"
 alias tmuxns="tmux new -s"
-alias muxns="tmuxinator start"
+# alias muxns="tmuxinator start"
 alias tmux="tmux -u"
-alias mux="tmuxinator"
+# alias mux="tmuxinator"
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
