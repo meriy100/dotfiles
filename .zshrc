@@ -293,3 +293,6 @@ if [ -f '/Users/meriy100/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+# local_scripts path
+export PATH="$HOME/ghq/github.com/meriy100/local_scripts/bin:$PATH"
