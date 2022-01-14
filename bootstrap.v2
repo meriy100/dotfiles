@@ -13,6 +13,8 @@ ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
 
 ln -sf $(pwd)/Brewfile $HOME/Brewfile
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 brew bundle
 
 ghq get git@github.com:meriy100/local_scripts.git
