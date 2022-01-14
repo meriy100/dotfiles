@@ -15,4 +15,5 @@ ln -sf $(pwd)/Brewfile $HOME/Brewfile
 
 brew bundle
 
-
+ghq get git@github.com:meriy100/local_scripts.git
+ghq get git@github.com:meriy100/vimrc.git
