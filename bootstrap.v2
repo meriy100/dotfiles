@@ -35,3 +35,7 @@ ghq get git@github.com:meriy100/vimrc.git
 
 # gcp cli install
 curl https://sdk.cloud.google.com | bash
+
+# openjdk.jdk の synlink
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
