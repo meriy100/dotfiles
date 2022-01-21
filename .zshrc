@@ -151,12 +151,18 @@ export PATH="$HOME/.ghq/github.com/meriy100/local_scripts/bin:$PATH"
 
 
 
+## RPROMPT
 
-
-
-
-#RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
+# DateTime
 RPROMPT=""
+RPROMPT=$RPROMPT"%*"
+
+# CPU
+if (( $+commands[arch] )); then
+  RPROMPT=$RPROMPT'%{${fg[blue]}%}($(arch))%{${reset_color}%}'
+fi
+
+# Git Branch
 
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -166,11 +172,9 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-RPROMPT=$RPROMPT'%*${vcs_info_msg_0_}'
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-
-#android sdk path
-#export PATH=${PATH}:~/android_sdk_linux/tools
+# ====
 
 #C-S C-Q トラップ解除
 stty -ixon -ixoff
