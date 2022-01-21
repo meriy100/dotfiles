@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sudo softwareupdate --install-rosetta
+
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
 ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 
@@ -15,6 +17,8 @@ ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
 ln -sf $(pwd)/Brewfile $HOME/Brewfile
 
 source $HOME/.zshrc
+
+
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -39,4 +43,7 @@ curl https://sdk.cloud.google.com | bash
 
 # openjdk.jdk の synlink
 sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+# x64 brew install
+arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
