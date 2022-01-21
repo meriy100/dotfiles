@@ -1,5 +1,23 @@
 ## homebrew path
-export PATH="/opt/homebrew/bin:$PATH"
+if (( $+commands[arch] )); then
+  if [[ $(uname -m) == "x86_64" ]]; then
+    typeset -U path PATH
+    path=(
+      /usr/local/bin(N-/)
+      /usr/local/sbin(N-/)
+      $path
+    )
+  else
+    typeset -U path PATH
+    path=(
+      /opt/homebrew/bin(N-/)
+      /opt/homebrew/sbin(N-/)
+      $path
+    )
+  fi
+else
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 ##rbenv path
 export PATH="$HOME/.rbenv/bin:$PATH"

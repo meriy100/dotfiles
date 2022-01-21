@@ -172,7 +172,7 @@ set clipboard=unnamed,autoselect
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.alias ] && source ~/.zshrc.alias
-[ -f ~/.zshrc.path ] && source ~/.zshrc.path
+[ -f ~/.zshrc.path ] && source $HOME/.zshrc.path
 
 
 
@@ -267,3 +267,4 @@ if [ -f '/Users/meriy100/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/meriy1
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/meriy100/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/meriy100/google-cloud-sdk/completion.zsh.inc'; fi
+

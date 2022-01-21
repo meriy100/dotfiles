@@ -8,7 +8,7 @@ ln -sf $(pwd)/karabiner $HOME/.config/karabiner
 
 ln -sf $(pwd)/.zshrc $HOME/.zshrc
 ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
-ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.path
+ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
 
 ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
 
