@@ -133,24 +133,6 @@ PROMPT="%{${fg[blue]}%}%B[%n@%m]%b%{${reset_color}%}%{${fg[green]}%}%~%{${reset_
 #SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 #RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 
-## homebrew path
-export PATH="/opt/homebrew/bin:$PATH"
-
-
-##rbenv path
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
-## nodebrew path
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export PATH="$HOME/.ghq/github.com/meriy100/local_scripts/bin:$PATH"
-
-
-
 ## RPROMPT
 
 # DateTime
@@ -184,15 +166,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 
 export EDITOR=vim        # エディタをvimに設定
-##android studio
-# export PATH="$HOME/android-studio/bin/:$PATH"
-# function git(){hub "$@"} # zsh
 
 set clipboard=unnamed,autoselect
 
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.alias ] && source ~/.zshrc.alias
+[ -f ~/.zshrc.path ] && source ~/.zshrc.path
 
 
 
@@ -223,14 +203,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # installer path
 export INSTALLER_PATH="$HOME/dotfiles/installer/"
 
-if [ -x "`which go`" ]; then
-    export GOPATH=$HOME/go
-    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-fi
-
-
-
-
 ### ghq and peco
 
 function peco-src () {
@@ -260,13 +232,6 @@ bindkey '^g' peco-src-git-branch
 
 # source ~/.bin/tmuxinator.zsh
 
-### Haskell stack
-export PATH="$HOME/.local/bin:$PATH"
-# alias ghc="stack ghc"
-# alias ghci="stack ghci"
-# alias runghc="stack runghc"
-# alias runhaskell="stack runghc"
-
 fpath=(~/.zsh/completion $fpath)
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -283,18 +248,8 @@ export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/meriy100/.nodebrew/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/meriy100/.nodebrew/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 
-
-
-# export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-
-
-
 autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
-
-# local_scripts path
-export PATH="$HOME/ghq/github.com/meriy100/local_scripts/bin:$PATH"
-
 
 # Docker autocomplete
 if [ -e ~/.zsh/completions ]; then
