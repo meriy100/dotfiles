@@ -1,96 +1,49 @@
 #!/bin/sh
 
-# 古すぎて使えないので v2 を使用する
+sudo softwareupdate --install-rosetta
 
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
+ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
+ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 
-mkdir -p ~/.vim/bundle
-# git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.zshrc.alias ~/.zshrc.alias
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+mkdir -p $HOME/.config
+ln -sf $(pwd)/karabiner $HOME/.config/karabiner
 
-mkdir -p ~/.config/karabiner/
-mkdir -p ~/.config/karabiner/assets/complex_modifications/
-ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
-ln -sf ~/dotfiles/karabiner/assets/complex_modifications/1.json ~/.config/karabiner/assets/complex_modifications/1.json
+ln -sf $(pwd)/.zshrc $HOME/.zshrc
+ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
+ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
 
-ln -sf ~/dotfiles/.vimrc.set ~/.vim/.vimrc.set
-ln -sf ~/dotfiles/.vimrc.keymap ~/.vim/.vimrc.keymap
-ln -sf ~/dotfiles/.vimrc.plugins ~/.vim/.vimrc.plugins
-ln -sf ~/dotfiles/.vimrc.script ~/.vim/.vimrc.script
-ln -sf ~/dotfiles/.vimrc.dein ~/.vim/.vimrc.dein
+ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
+
+ln -sf $(pwd)/Brewfile $HOME/Brewfile
+
+source $HOME/.zshrc
 
 
-mkdir -p $HOME/.vim/rc
-ln -sf ~/dotfiles/vim/rc/dein.toml ~/.vim/rc/dein.toml
-ln -sf ~/dotfiles/vim/rc/dein_lazy.toml ~/.vim/rc/dein_lazy.toml
 
-mkdir -p ~/local
-ln -sf ~/dotfiles/local/script ~/local/
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# mysql
-ln -sf ~/dotfiles/.my.cnf ~/.my.cnf
+source $HOME/.zshrc
 
-# latexmkrc
-ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
+brew bundle
 
-# RubyMine
-ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
-
-# tig
-ln -sf ~/dotfiles/.tigrc ~/.tigrc
-
-# peco
-ln -sf ~/dotfiles/peco ~/.config/peco
-
-# tmuxinator
-gem install tmuxinator
-ln -sf ~/dotfiles/tmuxinator ~/.config/tmuxinator
-
-# rubocop.yml
-gem install rubocop
-ln -sf ~/dotfiles/.rubocop.yml ~/.rubocop.yml
+# docker and docker-compose autocomplete
+mkdir $HOME/.zsh/completions
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion $HOME/.zsh/completions/_docker
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion $HOME/.zsh/completions/_docker-compose
 
 
-# docker compose
-# https://docs.docker.com/compose/completion/#bash
-# mkdir -p ~/.zsh/completion
-# curl -L https://raw.githubusercontent.com/docker/compose/1.17.0/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
+# local script
+ghq get git@github.com:meriy100/local_scripts.git
 
-mkdir -p $HOME/.zsh
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+# vim config
+ghq get git@github.com:meriy100/vimrc.git
 
+# gcp cli install
+curl https://sdk.cloud.google.com | bash
 
-# home brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install readline
-brew install jq
-brew install gradle
-brew install python3
-brew install peco
-brew install redis
-brew install mysql
-brew install cmake
-brew install ghq
-brew install automake
-brew install selenium-server-standalone
-brew cask install chromedriver
-brew install imagemagick
-brew install graphviz
-brew install go
-brew install dep
-brew install colordiff
-brew install watchman
-brew install heroku
+# openjdk.jdk の synlink
+sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install docker
-brew cask install ngrok
-brew cask install android-studio
+# x64 brew install
+arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# circleci CLI
-curl -o /usr/local/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod +x /usr/local/bin/circleci
