@@ -10,6 +10,8 @@ alias :e='vim'
 alias latexmk='latexmk -pvc'
 alias svn ignore='svn propset svn:ignore -R -F .svnignore .'
 
+alias tf='terraform'
+
 alias LINE="wine .wine/drive_c/users/canon/LINE/LINE.exe"
 
 alias svg_to_eps='inkscape -z -E'
