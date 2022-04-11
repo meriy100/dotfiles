@@ -30,7 +30,11 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # local_scripts path
-export PATH="$HOME/ghq/github.com/meriy100/local_scripts/bin:$PATH"
+
+if [ -x "`which ghq`" ]; then
+  GHQ_ROOT=`ghq root`
+  export PATH="$GHQ_ROOT/github.com/meriy100/local_scripts/bin:$PATH"
+fi
 
 # GO Lang path
 if [ -x "`which go`" ]; then
