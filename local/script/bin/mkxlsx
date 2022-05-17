@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-csv_path = ARGV.first
-File.open(csv_path, "w") do |f|
-  f.write "\xEF\xBB\xBF"
-  f.write $stdin.read
-end

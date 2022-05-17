@@ -1,3 +1,0 @@
-#!/bin/sh
-
-ifconfig | grep -A6 '^en0' | grep 'inet \d' | ruby -ne 'puts $_.match(/inet (\d+\.\d+\.\d+\.\d+)/)[1]'
