@@ -262,9 +262,9 @@ compinit
 # terraform autocomplete : $ terraform -install-autocomplete
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/meriy100/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/meriy100/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/meriy100/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/meriy100/google-cloud-sdk/completion.zsh.inc'; fi
-
