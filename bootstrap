@@ -38,6 +38,9 @@ ghq get git@github.com:meriy100/local_scripts.git
 # vim config
 ghq get git@github.com:meriy100/vimrc.git
 
+# iterm material-design
+ghq get git@github.com:MartinSeeler/iterm2-material-design.git
+
 # gcp cli install
 curl https://sdk.cloud.google.com | bash
 
