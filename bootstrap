@@ -15,6 +15,7 @@ ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
 ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
 
 ln -sf $(pwd)/Brewfile $HOME/Brewfile
+ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
 
 source $HOME/.zshrc
 
