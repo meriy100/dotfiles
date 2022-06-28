@@ -228,6 +228,17 @@ function peco-src-git-branch () {
 zle -N peco-src-git-branch
 bindkey '^g' peco-src-git-branch
 
+function peco-src-git-tag() {
+  local selected_tag=$(git tag -l | ruby -pe '$_.gsub!(/\*/, " ")' | ruby -pe '$_.gsub!(/#/, "\\#")' | grep -v 'HEAD -> ' | peco --query "$LBUFFER")
+  if [ -n "$selected_tag" ]; then
+    BUFFER="git checkout ${selected_tag}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src-git-tag
+bindkey '^t' peco-src-git-tag
+
 
 
 # source ~/.bin/tmuxinator.zsh
