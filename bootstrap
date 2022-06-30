@@ -42,6 +42,8 @@ ghq get git@github.com:meriy100/vimrc.git
 # iterm material-design
 ghq get git@github.com:MartinSeeler/iterm2-material-design.git
 
+ghq get git@github.com:tmux-plugins/tpm
+
 # gcp cli install
 curl https://sdk.cloud.google.com | bash
 
@@ -52,4 +54,7 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/Java
 arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 pip3 install imgcat
+
+mkdir -p $HOME/.tmux/plugins
+ln -s $HOME/ghq/github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
