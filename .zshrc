@@ -280,6 +280,8 @@ if [ -f '/Users/meriy100/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/meriy1
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/meriy100/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/meriy100/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Initial mcfly (https://github.com/cantino/mcfly)
 if type mcfly > /dev/null; then
   eval "$(mcfly init zsh)"
 fi
+
