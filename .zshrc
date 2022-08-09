@@ -282,3 +282,8 @@ if type mcfly > /dev/null; then
   eval "$(mcfly init zsh)"
 fi
 
+
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi
+
