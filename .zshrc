@@ -39,10 +39,6 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
 
-## 補完機能の強化
-autoload -U compinit
-compinit
-
 ## コアダンプサイズを制限
 #limit coredumpsize 102400
 ## 出力の文字列末尾に改行コードが無い場合でも表示
@@ -267,6 +263,7 @@ if [ -e ~/.zsh/completions ]; then
   fpath=(~/.zsh/completions $fpath)
 fi
 
+## 補完機能の強化
 autoload -U compinit
 compinit
 
