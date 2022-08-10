@@ -27,13 +27,6 @@ function cdu() {
   cd `git rev-parse --show-toplevel`
 }
 
-
-# neovim config
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# installer path
-export INSTALLER_PATH="$HOME/dotfiles/installer/"
-
 ### ghq and peco
 
 function peco-src () {
