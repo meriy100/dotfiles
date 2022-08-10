@@ -8,22 +8,6 @@
 [ -f ~/.zshrc.path ] && source $HOME/.zshrc.path
 [ -f ~/.zshrc.peco ] && source $HOME/.zshrc.peco
 
-
-# w3m google検索
-
-function google() {
-local str opt
-if [ $ != 0 ]; then
-   for i in $*; do
-     str="$str+$i"
-   done
-    str=`echo $str | sed 's/^\+//'`
- opt='search?num=50&hl=ja&lr=lang_ja'
-    opt="${opt}&q=${str}"
-fi
-w3m http://www.google.co.jp/$opt
-}
-
 function cdu() {
   cd `git rev-parse --show-toplevel`
 }
