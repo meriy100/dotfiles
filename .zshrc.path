@@ -19,29 +19,27 @@ else
   export PATH="/opt/homebrew/bin:$PATH"
 fi
 
-##rbenv path
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
+## rbenv path
+if [ -x "`which rbenv`" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init - zsh)"
+fi
 
 ## nodebrew path
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-### Added by the Heroku Toolbelt
+## Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# local_scripts path
-
+## local_scripts path
 if [ -x "`which ghq`" ]; then
-  GHQ_ROOT=`ghq root`
+  # GHQ_ROOT=`ghq root`
   export PATH="$GHQ_ROOT/github.com/meriy100/local_scripts/bin:$PATH"
 fi
 
-# GO Lang path
+## GO Lang path
 if [ -x "`which go`" ]; then
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
-
-
-export PATH="$HOME/.local/bin:$PATH"
 
