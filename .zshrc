@@ -6,6 +6,7 @@
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.alias ] && source ~/.zshrc.alias
 [ -f ~/.zshrc.path ] && source $HOME/.zshrc.path
+[ -f ~/.zshrc.peco ] && source $HOME/.zshrc.peco
 
 
 # w3m google検索
@@ -27,50 +28,13 @@ function cdu() {
   cd `git rev-parse --show-toplevel`
 }
 
-### ghq and peco
-
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^o' peco-src
-
-### git branch and peco
-function peco-src-git-branch () {
-  local selected_branch=$(git branch -a | ruby -pe '$_.gsub!(/\*/, " ")' | ruby -pe '$_.gsub!(/#/, "\\#")' | grep -v 'HEAD -> ' | peco --query "$LBUFFER")
-  if [ -n "$selected_branch" ]; then
-    BUFFER="git checkout ${selected_branch}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src-git-branch
-bindkey '^g' peco-src-git-branch
-
-function peco-src-git-tag() {
-  local selected_tag=$(git tag -l | ruby -pe '$_.gsub!(/\*/, " ")' | ruby -pe '$_.gsub!(/#/, "\\#")' | grep -v 'HEAD -> ' | peco --query "$LBUFFER")
-  if [ -n "$selected_tag" ]; then
-    BUFFER="git checkout ${selected_tag}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src-git-tag
-bindkey '^t' peco-src-git-tag
-
-
-
 # source ~/.bin/tmuxinator.zsh
 
 fpath=(~/.zsh/completion $fpath)
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
 export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
 
 # tabtab source for serverless package

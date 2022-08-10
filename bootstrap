@@ -10,6 +10,7 @@ ln -sf $(pwd)/karabiner $HOME/.config/karabiner
 ln -sf $(pwd)/peco $HOME/.config/peco
 ln -sf $(pwd)/.zshrc $HOME/.zshrc
 ln -sf $(pwd)/.zshrc.base $HOME/.zshrc.base
+ln -sf $(pwd)/.zshrc.peco $HOME/.zshrc.peco
 ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
 ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
 
