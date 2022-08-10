@@ -33,8 +33,14 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ## local_scripts path
 if [ -x "`which ghq`" ]; then
-  # GHQ_ROOT=`ghq root`
-  export PATH="$GHQ_ROOT/github.com/meriy100/local_scripts/bin:$PATH"
+  if [ -z $GHQ_ROOT ]; then
+    echo "# $ ghq root" >> $HOME/.zshrc.local
+    echo "export GHQ_ROOT=$(ghq root)" >> $HOME/.zshrc.local
+    echo "" >> $HOME/.zshrc.local
+    export PATH="$(ghq root)/github.com/meriy100/local_scripts/bin:$PATH"
+  else
+    export PATH="$GHQ_ROOT/github.com/meriy100/local_scripts/bin:$PATH"
+  fi
 fi
 
 ## GO Lang path
