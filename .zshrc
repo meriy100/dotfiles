@@ -50,6 +50,7 @@ if [ -f '/Users/meriy100/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 # Initial mcfly (https://github.com/cantino/mcfly)
 if type mcfly > /dev/null; then
   eval "$(mcfly init zsh)"
+  export MCFLY_RESULTS_SORT=LAST_RUN
 fi
 
 if (which zprof > /dev/null 2>&1) ;then
