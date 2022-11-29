@@ -15,6 +15,7 @@
   start = flow feature start
   finish = flow feature finish
   gr = grep -n
+  sc = switch_C
   # publish = flow feature publish
 	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 #[url "git@github.com:"]
@@ -24,7 +25,6 @@
 #     InsteadOf = git@github.com
 [core]
 	quotepath = false
-	excludesfile = /Users/meriy100/.gitignore_global
 [diff]
 	tool = vimdiff
 	compactionHeuristic = true

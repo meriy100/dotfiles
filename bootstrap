@@ -1,31 +1,33 @@
 #!/bin/sh
 
-# sudo softwareupdate --install-rosetta
+sudo softwareupdate --install-rosetta
 
-# ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
-#
-# ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
-#
-# mkdir -p $HOME/.config
-# ln -sf $(pwd)/karabiner $HOME/.config/karabiner
-# ln -sf $(pwd)/peco $HOME/.config/peco
-# ln -sf $(pwd)/.zshrc $HOME/.zshrc
-# ln -sf $(pwd)/.zshrc.base $HOME/.zshrc.base
-# ln -sf $(pwd)/.zshrc.peco $HOME/.zshrc.peco
-# ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
-# ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
-#
-# ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
-#
-# ln -sf $(pwd)/Brewfile $HOME/Brewfile
-# ln -sf $(pwd)/.gitignore_global $HOME/.gitignore_global
-#
-# source $HOME/.zshrc
+ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
+
+ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
+
+mkdir -p $HOME/.config
+ln -sf $(pwd)/karabiner $HOME/.config/karabiner
+ln -sf $(pwd)/peco $HOME/.config/peco
+ln -sf $(pwd)/.zshrc $HOME/.zshrc
+ln -sf $(pwd)/.zshrc.base $HOME/.zshrc.base
+ln -sf $(pwd)/.zshrc.peco $HOME/.zshrc.peco
+ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
+ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
+
+ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
+
+ln -sf $(pwd)/Brewfile $HOME/Brewfile
+
+mkdir -p $HOME/.config/git
+ln -sf $(pwd)/.gitignore_global $HOME/.config/git/ignore
+
+source $HOME/.zshrc
 
 
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# source $HOME/.zshrc
+source $HOME/.zshrc
 
 brew bundle
 
