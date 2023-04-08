@@ -57,3 +57,4 @@ if [ -f '/Users/kariyado/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kariya
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kariyado/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kariyado/google-cloud-sdk/completion.zsh.inc'; fi
+
