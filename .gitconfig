@@ -1,5 +1,5 @@
 [user]
-	email = ttattataa@gmail.com
+	email = kouta@meriy100.com
 	name = meriy100
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
