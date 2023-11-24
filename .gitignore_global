@@ -7,3 +7,5 @@ dump.rdb
 */dump.rdb
 .vscode/
 .idea/
+
+venv/
