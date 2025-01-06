@@ -9,3 +9,8 @@ dump.rdb
 .idea/
 
 venv/
+
+# NOTE: tebiki-skp
+frontend/frontend/public/mockServiceWorker.js
+lambda/src/tebiki-skp-opensearch-api/
+
