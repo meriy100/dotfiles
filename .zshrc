@@ -41,12 +41,6 @@ fi
 # terraform autocomplete : $ terraform -install-autocomplete
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-# Initial mcfly (https://github.com/cantino/mcfly)
-if type mcfly > /dev/null; then
-  eval "$(mcfly init zsh)"
-  export MCFLY_RESULTS_SORT=LAST_RUN
-fi
-
 if (which zprof > /dev/null 2>&1) ;then
   zprof
 fi
