@@ -35,8 +35,7 @@ zle -N peco-src-git-tag
 bindkey '^t' peco-src-git-tag
 
 function peco-history-selection() {
-    # BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    BUFFER=`history -n 1| ruby -pe 'begin; $_.gsub!(/\A(\d|\.)+ (\d|:)+  /, ""); rescue; end' | peco`
+    BUFFER=`history -n 1| tail -r | ruby -pe 'begin; $_.gsub!(/\A(\d|\.)+ (\d|:)+  /, ""); rescue; end' | peco`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
