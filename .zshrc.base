@@ -126,6 +126,7 @@ PROMPT="%{${fg[blue]}%}%B[%n@%m]%b%{${reset_color}%}%{${fg[green]}%}%~%{${reset_
 #RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 
 ## RPROMPT
+setopt PROMPT_SUBST
 
 # DateTime
 RPROMPT=""
@@ -136,10 +137,13 @@ if (( $+commands[arch] )); then
   RPROMPT=$RPROMPT'%{${fg[blue]}%}($(arch))%{${reset_color}%}'
 fi
 
+# AWS_PROFILE
+RPROMPT=$RPROMPT'%{${fg[cyan]}%}[$AWS_PROFILE]%{${reset_color}%}'
+
+
 # Git Branch
 
 autoload -Uz vcs_info
-setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
