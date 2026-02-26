@@ -10,7 +10,15 @@ dump.rdb
 
 venv/
 
+**/proposal.md
+
 # NOTE: tebiki-skp
 frontend/frontend/public/mockServiceWorker.js
 lambda/src/tebiki-skp-opensearch-api/
+
+
+**/.claude/settings.local.json
+
+tmp/
+!tmp/.keep
 
