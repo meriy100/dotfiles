@@ -13,3 +13,6 @@ get_unless_exists() {
 get_unless_exists ssh://git@github.com/meriy100/local_scripts.git
 
 get_unless_exists ssh://git@github.com/MartinSeeler/iterm2-material-design.git
+
+get_unless_exists ssh://git@github.com/meriy100/private_bootstrap.git
+
