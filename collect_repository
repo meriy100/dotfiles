@@ -1,0 +1,15 @@
+#!/bin/sh
+
+get_unless_exists() {
+  repo="$1"
+  path=$(echo "$repo" | sed -e 's,^.*://[^/]*/,,' -e 's,\.git$,,')
+  if ghq list | grep -qx "github.com/$path"; then
+    echo "already exists: $path"
+  else
+    ghq get "$repo"
+  fi
+}
+
+get_unless_exists ssh://git@github.com/meriy100/local_scripts.git
+
+get_unless_exists ssh://git@github.com/MartinSeeler/iterm2-material-design.git
