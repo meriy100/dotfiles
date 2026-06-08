@@ -1,9 +1,6 @@
 #!/bin/sh
 
-sudo softwareupdate --install-rosetta
-
 ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
-
 ln -sf $(pwd)/.gitconfig $HOME/.gitconfig
 
 mkdir -p $HOME/.config
@@ -14,51 +11,5 @@ ln -sf $(pwd)/.zshrc.base $HOME/.zshrc.base
 ln -sf $(pwd)/.zshrc.peco $HOME/.zshrc.peco
 ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
 ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
-
-ln -sf $(pwd)/.ideavimrc $HOME/.ideavimrc
-
-ln -sf $(pwd)/Brewfile $HOME/Brewfile
-
-mkdir -p $HOME/.config/git
-ln -sf $(pwd)/.gitignore_global $HOME/.config/git/ignore
-
-source $HOME/.zshrc
-
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-source $HOME/.zshrc
-
-brew bundle
-
-# docker and docker-compose autocomplete
-mkdir $HOME/.zsh/completions
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker.zsh-completion $HOME/.zsh/completions/_docker
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion $HOME/.zsh/completions/_docker-compose
-
-
-# local script
-ghq get git@github.com:meriy100/local_scripts.git
-
-# vim config
-ghq get git@github.com:meriy100/vimrc.git
-
-# iterm material-design
-ghq get git@github.com:MartinSeeler/iterm2-material-design.git
-
-ghq get git@github.com:tmux-plugins/tpm
-
-# gcp cli install
-curl https://sdk.cloud.google.com | bash
-
-# openjdk.jdk の synlink
-sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-
-# x64 brew install
-arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-pip3 install imgcat
-
-mkdir -p $HOME/.tmux/plugins
-ln -s $HOME/ghq/github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+ln -sf $(pwd)/.Brewfile $HOME/.Brewfile
 
