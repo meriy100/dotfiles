@@ -13,3 +13,6 @@ ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
 ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
 ln -sf $(pwd)/.Brewfile $HOME/.Brewfile
 
+mkdir -p $HOME/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
