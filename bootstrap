@@ -13,6 +13,9 @@ ln -sf $(pwd)/.zshrc.alias $HOME/.zshrc.alias
 ln -sf $(pwd)/.zshrc.path $HOME/.zshrc.path
 ln -sf $(pwd)/.Brewfile $HOME/.Brewfile
 
+mkdir -p $HOME/.config/git/
+ln -sf $(pwd)/.config/git/ignore $HOME/.config/git/ignore
+
 mkdir -p $HOME/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
