@@ -1,0 +1,16 @@
+#!/bin/sh
+
+mkdir -p $HOME/.claude/agents
+mkdir -p $HOME/.claude/skills
+
+# .claude/agents と .claude/skills 配下の各ファイルを dirstructure を維持して symlink を張る
+for dir in agents skills; do
+  find $(pwd)/.claude/$dir -type f | while read -r src; do
+    rel=${src#$(pwd)/.claude/}
+    dest=$HOME/.claude/$rel
+    mkdir -p "$(dirname "$dest")"
+    ln -sf "$src" "$dest"
+  done
+done
+
+
