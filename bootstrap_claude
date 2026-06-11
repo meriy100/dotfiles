@@ -13,4 +13,6 @@ for dir in agents skills; do
   done
 done
 
+# .claude/CLAUDE.md を symlink
+ln -sf "$(pwd)/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
